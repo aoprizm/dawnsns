@@ -44,7 +44,7 @@
         </div>
         <div id="side-bar">
             <div id="confirm">
-                <p>〇〇さんの</p>
+                <p>田中さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
