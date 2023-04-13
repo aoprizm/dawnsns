@@ -1,0 +1,80 @@
+@charset "utf-8";
+
+html {
+    font-size: 16px;
+}
+
+body {
+    color: #624649;
+    font-size: 1rem;
+    font-family: "YuGothic",
+        Yu Gothic,
+        sans-serif;
+    font-weight: bold;
+
+}
+
+/* header */
+header {
+    background: #009988;
+}
+
+/* main content */
+#row {
+    display: flex;
+    flex-flow: row wrap;
+}
+
+#container {
+    max-width: 1024px;
+    width: 90%;
+    margin: 0 auto;
+}
+
+#side-bar {
+    flex: 0 0 19%;
+    border-left: 1px solid #6C6C6C;
+}
+
+/* 右上のハンバーガメニュー */
+.g-navi {
+    transform: translateY(-100%);
+    transition: .5s ease-in-out;
+    display: block;
+    position: fixed;
+    z-index: 2;
+    padding-top: 60px;
+    height: 100vh;
+}
+
+.g-navi ul {
+    display: block;
+}
+
+.g-navi.active {
+    transform: translateY(0%);
+    transition: .5s ease-in-out;
+}
+
+
+/* モーダルのスタイル */
+.modal-main {
+    /* ① モーダルウィンドウを非表示にする。*/
+    display: none;
+}
+
+#modal-content {
+    width: 50%;
+    margin: 1.5em auto 0;
+    padding: 10px 20px;
+    border: 2px solid #aaa;
+    background: #fff;
+    z-index: 2;
+}
+
+.modal-innner {
+    width: 70%;
+    text-align: center;
+    margin: 0 auto;
+    margin-bottom: 20px;
+}
