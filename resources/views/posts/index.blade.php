@@ -29,7 +29,7 @@
                                 {!! Form::input('text', 'update', $post->posts , ['required', 'class' => 'form-control02']) !!}
                                 {!! Form::hidden('id', $post->id ) !!}
                             </div>
-                        <img src="/images/edit.png" width="30" height="30">
+                        <img src="/images/edit.png" class="image">
                         </div>
                     </div>
                     {!! Form::close() !!}
