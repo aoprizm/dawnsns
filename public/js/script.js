@@ -15,12 +15,12 @@ $(function () {
 });
 
 $(function () {
-  $('.menu-trigger').each(function () {
-    $(this).on('click', function () {
-      var target = $(this).data('select');
-      var modal = document.getElementById(select);
-      console.log(1 + 1);
-      return false;
-    });
+  $('.menu-trigger').on('click', function () {
+    $(this).toggleClass('active');
+    if ($(this).hasClass('active')) {
+      $('.g-list').addClass('active');
+    } else {
+      $('.g-list').removeClass('active');
+    }
   });
 });

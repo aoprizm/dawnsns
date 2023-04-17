@@ -25,18 +25,17 @@
 <body>
     <header>
         <div id = "head">
-        <h1><a><img src="/images/main_logo.png" width=100></a></h1>
-            <div class="menu-trigger" data-target="select">
+            <span><img src="/images/main_logo.png" width="100px" height="auto"></span>
+                <div class="menu-trigger">
+                {{ Auth::user()->username }} さん<img src="/images/dawn.png" width=20>
+                    <nav class="g-list">
+                        <ul>
+                            <li><a href="/top">ホーム</a></li>
+                            <li><a href="/profile">プロフィール</a></li>
+                            <li><a href="/logout">ログアウト</a></li>
+                        </ul>
+                    </nav>
                 </div>
-                <nav class="g-navi">
-                <h1><p>{{ Auth::user()->username }}さん<img src="/images/dawn.png" width=20></p></h1>
-                    <ul>
-                        <li><a href="/top">ホーム</a></li>
-                        <li><a href="/profile">プロフィール</a></li>
-                        <li><a href="/logout">ログアウト</a></li>
-                    </ul>
-                </nav>
-        </div>
     </header>
     <div id="row">
         <div id="container">
@@ -44,7 +43,7 @@
         </div>
         <div id="side-bar">
             <div id="confirm">
-                <p>田中さんの</p>
+                <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
                 <p>〇〇名</p>
