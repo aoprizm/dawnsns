@@ -7,7 +7,7 @@
     <div class="form-group">
         {!! Form::input('text', 'newPost', null, ['required', 'class' => 'form-control', 'placeholder' => '何をつぶやこうか…？']) !!}
     </div>
-    <button type="submit" class="btn btn-success pull-right">送信</button>
+    <input type="image" img src="images/post.png" class="post-ping" width="30px">
     {!! Form::close() !!}
 </div>
 
