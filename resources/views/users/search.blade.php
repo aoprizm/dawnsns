@@ -6,7 +6,7 @@
     <form action ="search" method="post">
         @csrf
         <input type="text" name="keyword" placeholder="ユーザー名">
-        <input type="submit" value="検索する">
+        <button type="button"><img src="/public/images/edit.png"></button>
         <i class="fas fa-search"></i>
     </form>
     @if(isset($keyword))
@@ -17,9 +17,6 @@
     @endif
     <div id ="content">
         <table style="border-collapse: separate">
-            <tr>
-                <th class="username">USERNAME</th>
-            </tr>
             @foreach ($users as $user)
                 <tr>
                     <td class="id">{{ $user->username }}</td>
