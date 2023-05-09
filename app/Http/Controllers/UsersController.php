@@ -19,8 +19,14 @@ class UsersController extends Controller
     }
     public function search(){
         $users = DB::table('users')->get();
-        //dd($users);
-        return view('users.search', compact('users'));
+
+        $follows = DB::table('follows')
+            ->where('follower', Auth::id())
+            ->pluck('follow');
+            // dd($follows);
+            // dd($users);
+
+        return view('users.search', compact('users', 'follows'));
     }
     public function result(Request $request){
         $keyword = $request->input('keyword');
@@ -46,7 +52,7 @@ class UsersController extends Controller
             ->update([
                 'username' => $request->username,
                 'mail' => $request->mail,
-                'password' => $password,
+                'password' => $request->password,
                 'bio' => $request->bio,
             ]);
 

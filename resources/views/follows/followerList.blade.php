@@ -3,16 +3,18 @@
 @section('content')
 
 <div id ="content">
-    <table style="border-collapse: separate">
-            <tr>
-                <FLOLLOWERLIST class="FollowerList">FOLLOWERLIST</th>
-            </tr>
-            @foreach ($followers as $follower)
-            <tr>
-                    <td class="id">{{ $followers->follower }}</td>
-            </tr>
+    <div class="FollowerList">
+        <h1>FOLLOWLIST</h1>
+            @foreach($followers as $follower)
+                <img src="{{ asset('images/'.$follower->images) }}">
             @endforeach
-    </table>
+     </div>
+</div>
+<div class="followers-post">
+    @foreach($followers as $follower)
+    {{ $follower->posts }}
+    {{ $follower->created_at }}
+    @endforeach
 </div>
 
 @endsection

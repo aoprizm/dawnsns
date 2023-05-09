@@ -12,13 +12,23 @@ class FollowsController extends Controller
     public function followList(){
 
         $follows = DB::table('follows')
-        ->first();
+        ->join('users', 'follows.follow', 'users.id')
+        ->Leftjoin('posts', 'follows.follow', 'posts.user_id')
+        ->where('follower', Auth::id())
+        ->get();
+        // dd($follows);
+
         return view('follows.followList', compact('follows'));
     }
     public function followerList(){
+
         $followers = DB::table('follows')
-        ->first();
-        return view('follows.followerList', ['followers' => $followers]);
+        ->join('users', 'follows.follower', 'users.id')
+        ->Leftjoin('posts', 'follows.follower', 'posts.user_id')
+        ->where('follow', Auth::id())
+        ->get();
+        // dd($followers);
+        return view('follows.followerList', compact('followers'));
     }
     public function create(Request $request){
         $id = $request->id;

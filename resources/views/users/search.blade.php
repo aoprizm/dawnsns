@@ -18,23 +18,26 @@
     <div id ="content">
         <table style="border-collapse: separate">
             @foreach ($users as $user)
-                <tr>
-                    <td class="id">{{ $user->username }}</td>
-                    <td>
-                        <form action ="/follow/create" method="post">
-                            @csrf
-                            <input type="hidden" value="{{$user->id}}" name="id">
-                            <input type="submit" value="フォローする">
-                        </form>
-                    </td>
-                    <td>
-                        <form action ="/follow/delete" method="post">
-                            @csrf
-                            <input type="hidden" value="{{$user->id}}" name="id">
-                            <input type="submit" value="フォローを外す">
-                        </form>
-                    </td>
-                </tr>
+            <tr>
+                <td class="id">{{ $user->username }}</td>
+                @if($follows->contains($user->id))
+                <td>
+                    <form action ="/follow/delete" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$user->id}}" name="id">
+                        <input type="submit" value="フォローを外す">
+                    </form>
+                </td>
+                @else
+                <td>
+                    <form action ="/follow/create" method="post">
+                        @csrf
+                        <input type="hidden" value="{{$user->id}}" name="id">
+                        <input type="submit" value="フォローする">
+                    </form>
+                </td>
+                @endif
+            </tr>
             @endforeach
         </table>
     </div>

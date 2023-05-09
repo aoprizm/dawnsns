@@ -12,30 +12,26 @@
 </div>
 
 <div class="post-list">
-    <table class='table table-hover'>
     @foreach ($posts as $post)
-    <tr>
-        <td>{{ $post->posts }}</td>
-        <td>{{ $post->created_at }}</td>
-        {!! Form::open(['url' => 'post/update']) !!}
-            <div class="modal-main" id="modal">
-                <div id="modal-content">
-                    <div class="modal-innner">
-                        {!! Form::input('text', 'update', $post->posts , ['required', 'class' => 'form-control02']) !!}
-                        {!! Form::hidden('id', $post->id ) !!}
+        {{ $post->posts }}
+        {{ $post->created_at }}
+        <button id="modalopen">
+        <img src="/images/edit.png" width="20" height="20"></button>
+        <section id="modalArea" class="modalArea">
+             <div id="modalBg" class="modalBg"></div>
+                <div class="modalWrapper">
+                    <div class="modalContents">
+                    {!! Form::open(['url' => 'post/update']) !!}
+                            {!! Form::input('text', 'update', $post->posts , ['required', 'class' => 'form-control02']) !!}
+                            {!! Form::hidden('id', $post->id ) !!}
+                        <img src="/images/edit.png" class="image">
+                    {!! Form::close() !!}
                     </div>
-                <img src="/images/edit.png" class="image">
                 </div>
             </div>
-            {!! Form::close() !!}
-        <td>
-            <div class="modalopen" data-target="modal">
-                <img src="/images/edit.png" width="30" height="30">
-            </div>
-        </td>
-        <td><a class="btn btn-primary" href="/post/{{ $post->id }}/delete" onclick="return confirm('このつぶやきを削除します。よろしいでしょうか？')"><img src="/images/trash.png"  width="50" height="50"></a></td>
-    </tr>
-    @endforeach
-    </table>
+            <div id="closeModal" class="closeModal"></div>
+        </section>
+<a class="btn btn-primary" href="/post/{{ $post->id }}/delete" onclick="return confirm('このつぶやきを削除します。よろしいでしょうか？')"><img src="/images/trash.png"  width="50" height="50"></a>
 </div>
+@endforeach
 @endsection
