@@ -52,16 +52,11 @@ header {
 
 .g-list.active {
     display: block;
-    width: 100%;
     text-align: center;
     background-color: #fff;
     padding: 5px 15px;
     border-radius: 2px solid #aaa;
-    z-index: 999;
-}
-
-.post-list {
-    display: flex;
+    z-index: 2;
 }
 
 
@@ -69,33 +64,17 @@ header {
 .modal-main {
     display: none;
     transition: 3s;
+    z-index: 9999;
 }
 
 .form-control02 {
     display: block;
     margin: 2.0em auto 0;
-    padding: 50px 50px;
+    padding: 50px;
     background: #fff;
-    z-index: 1;
+    z-index: 9999;
 }
 
-#modal-content {
-    width: 40%;
-    padding: 20px 20px;
-    border: 2px solid #aaa;
-    background: #fff;
-    z-index: 2;
-    position: fixed;
-    left: 25%;
-}
-
-
-.image {
-    size: 80%;
-    display: block;
-    margin-left: auto;
-    margin-right: 0;
-}
 
 .post-container,
 .FollowList,
@@ -104,10 +83,6 @@ header {
     padding: 20px;
 }
 
-.followers-post,
-.follows-post {
-    padding: 20px 20px;
-}
 
 * {
     box-sizing: border-box;
@@ -115,58 +90,4 @@ header {
 
 body {
     font-family: 'Avenir', 'Helvetica, Neue', 'Helvetica', 'Arial';
-}
-
-
-/* モーダルCSS */
-.modalArea {
-    display: none;
-    position: fixed;
-    z-index: 10;
-    /*サイトによってここの数値は調整 */
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-}
-
-.modalBg {
-    width: 100%;
-    height: 100%;
-    background-color: rgba(30, 30, 30, 0.9);
-}
-
-.modalWrapper {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    width: 70%;
-    max-width: 500px;
-    padding: 10px 30px;
-    background-color: #fff;
-}
-
-.closeModal {
-    position: absolute;
-    top: 0.5rem;
-    right: 1rem;
-    cursor: pointer;
-}
-
-
-/* 以下ボタンスタイル */
-button {
-    padding: 10px;
-    background-color: #fff;
-    border: 1px solid #282828;
-    border-radius: 2px;
-    cursor: pointer;
-}
-
-#openModal {
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
 }

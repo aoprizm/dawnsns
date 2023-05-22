@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="description" content="ページの内容を表す文章" />
     <title></title>
-    <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="/css/reset.css">
+    <link rel="stylesheet" href="/css/style.css">
     <!--スマホ,タブレット対応-->
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <!--サイトのアイコン指定-->
@@ -19,7 +19,7 @@
     <link rel="apple-touch-icon-precomposed" href="画像のURL" />
     <!--OGPタグ/twitterカード-->
     <script src="https://code.jquery.com/jquery-3.6.1.min.js"></script>
-    <script src="js/script.js"></script>
+    <script src="/js/script.js"></script>
 </head>
 
 <body>
@@ -27,7 +27,7 @@
         <div id = "head">
             <img src="/images/main_logo.png" width="100px" height="auto">
                 <div class="menu-trigger">
-                {{ Auth::user()->username }} さん<img src="/images/dawn.png" width=20>
+            {{ Auth::user()->username }} さん<img src="/storage/images/{{ Auth::user()->images }}" width=20>
                     <nav class="g-list">
                         <ul>
                             <li><a href="/top">ホーム</a></li>
@@ -46,12 +46,12 @@
                 <p>{{ Auth::user()->username }}さんの</p>
                 <div>
                 <p>フォロー数</p>
-                <p></p>
+                <p>{{ $follow_count }}名</p>
                 </div>
                 <p class="follow-btn"><a href="/follow-list">フォローリスト</a></p>
                 <div>
                 <p>フォロワー数</p>
-                <p>〇〇名</p>
+                <p>{{ $follower_count }}名</p>
                 </div>
                 <p class="follower-btn"><a href="/follower-list">フォロワーリスト</a></p>
             </div>

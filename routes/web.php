@@ -21,8 +21,9 @@
 
 //ログアウト中のページ
 Route::get('/login', 'Auth\LoginController@login');
-Route::get('/', 'Auth\LoginController@login');
 Route::post('/login', 'Auth\LoginController@login');
+
+Route::get('/', 'Auth\LoginController@login');
 Route::post('/', 'Auth\LoginController@login');
 
 Route::get('/register', 'Auth\RegisterController@register');
@@ -62,3 +63,5 @@ Route::post('/follow/delete', 'FollowsController@delete');
 
 //プロフィールを編集したら
 Route::post('/profile/update', 'UsersController@update');
+
+Route::get('/list/{id}', 'UsersController@show');

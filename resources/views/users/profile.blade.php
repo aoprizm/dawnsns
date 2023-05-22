@@ -14,11 +14,11 @@
       <label>password{!! Form::input('password', 'password', $profile->password, ['required', 'class' => 'form-control']) !!}</label>
     </div>
     <div class='form-froup'>
-      <label>newpassword{!! Form::input('text', 'newpassword', "", ['required', 'class' => 'form-control']) !!}</label>
+      <label>newpassword{!! Form::input('text', 'newpassword', "", ['class' => 'form-control']) !!}</label>
     </div>
     <div class='form-froup'>
       <label>bio
-      {!! Form::input('text', 'bio', $profile->bio, ['required', 'class' => 'form-control']) !!}
+      {!! Form::input('text', 'bio', $profile->bio, ['class' => 'form-control']) !!}
     </div>
     <div class='form-froup'>
       <label>IconImage {{Form::file("cover_image")}}</label>

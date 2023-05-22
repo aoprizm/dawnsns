@@ -6,7 +6,7 @@
     <form action ="search" method="post">
         @csrf
         <input type="text" name="keyword" placeholder="ユーザー名">
-        <button type="button"><img src="/public/images/edit.png"></button>
+        <button type="button"><img src="public/images/edit.png"></button>
         <i class="fas fa-search"></i>
     </form>
     @if(isset($keyword))
@@ -19,6 +19,9 @@
         <table style="border-collapse: separate">
             @foreach ($users as $user)
             <tr>
+                <td>
+                    <img src="/storage/images/{{ $user->images }}" alt="">
+                </td>
                 <td class="id">{{ $user->username }}</td>
                 @if($follows->contains($user->id))
                 <td>

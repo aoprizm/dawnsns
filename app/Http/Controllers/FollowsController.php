@@ -15,6 +15,7 @@ class FollowsController extends Controller
         ->join('users', 'follows.follow', 'users.id')
         ->Leftjoin('posts', 'follows.follow', 'posts.user_id')
         ->where('follower', Auth::id())
+        ->select('users.id', 'users.username', 'users.images', 'posts.posts', 'posts.created_at')
         ->get();
         // dd($follows);
 
@@ -26,6 +27,7 @@ class FollowsController extends Controller
         ->join('users', 'follows.follower', 'users.id')
         ->Leftjoin('posts', 'follows.follower', 'posts.user_id')
         ->where('follow', Auth::id())
+        ->select('users.id', 'users.username', 'users.images', 'posts.posts', 'posts.created_at')
         ->get();
         // dd($followers);
         return view('follows.followerList', compact('followers'));

@@ -4,14 +4,17 @@
 
 <div id ="content">
     <div class="FollowerList">
-        <h1>FOLLOWLIST</h1>
+        <h1>FOLLOWERLIST</h1>
             @foreach($followers as $follower)
-                <img src="{{ asset('images/'.$follower->images) }}">
+            <a href="list/{{ $follower->id }}">
+                <img src="{{ asset('/storage/images/'.$follower->images) }}">
+            </a>
             @endforeach
      </div>
 </div>
 <div class="followers-post">
     @foreach($followers as $follower)
+    <img src="{{ asset('/storage/images/'.$follower->images) }}">
     {{ $follower->posts }}
     {{ $follower->created_at }}
     @endforeach
